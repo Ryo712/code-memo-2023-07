@@ -1,0 +1,35 @@
+<body>
+    <h1>React</h1>
+    <div id="root">wait...</div>
+    <script type="text/babel">
+    let dom = document.querySelector('#root');
+
+
+    const msg = {
+        fontSize: "20pt",
+        fontWeight:"bold",
+        padding: "10px",
+        color:"white",
+        backgroundColor:"darkblue"
+    };
+
+
+    // これが関数コンポーネント
+    function Welcome(props) {
+        return <p style={msg}>Hello React!!</p>;
+    }
+    /*function Welcome(props) { ... }: これがReactの関数コンポーネントの定義です。
+    関数コンポーネントは、入力（props）を受け取り、JSXを返す関数です。
+    このWelcome コンポーネントは、<p> タグで囲まれた "Hello React!!" というテキストをスタイル（msg）を適用して表示します。 */
+
+
+    // "el"という変数にJSXを代入。表示するJSX
+    let el = (
+    <div>
+        <Welcome />
+    </div>
+    );
+    ReactDOM.render(el, dom);
+    </script>
+</body>
+<!--ReactDOM.render() メソッドを使って、JSX（el）を指定されたDOMノード（dom）に描画します-->
